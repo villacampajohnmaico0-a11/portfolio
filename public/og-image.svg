@@ -1,0 +1,23 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Northstar Studio preview">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6F2EA"/>
+      <stop offset="100%" stop-color="#EDE7DA"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2F4BFF"/>
+      <stop offset="100%" stop-color="#4E6BFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="160" r="180" fill="#DDE3FF"/>
+  <circle cx="170" cy="500" r="220" fill="#E8E0D4"/>
+  <rect x="96" y="92" width="72" height="72" rx="20" fill="url(#accent)"/>
+  <path d="M122 120h18l30 54h-18l-30-54zm28 0h18l-28 54h-18l28-54z" fill="#F6F2EA"/>
+  <text x="96" y="235" font-family="'Sora', 'Segoe UI', sans-serif" font-size="44" fill="#14151A" font-weight="700">Northstar Studio</text>
+  <text x="96" y="320" font-family="'Manrope', 'Segoe UI', sans-serif" font-size="72" fill="#14151A" font-weight="800">Modern websites</text>
+  <text x="96" y="402" font-family="'Manrope', 'Segoe UI', sans-serif" font-size="72" fill="#14151A" font-weight="800">for growing businesses</text>
+  <text x="96" y="470" font-family="'Manrope', 'Segoe UI', sans-serif" font-size="28" fill="#2A2C34">Websites, online stores, booking systems, and custom business tools.</text>
+  <rect x="96" y="520" width="206" height="56" rx="28" fill="#2F4BFF"/>
+  <text x="132" y="556" font-family="'Manrope', 'Segoe UI', sans-serif" font-size="24" fill="#fff" font-weight="700">Start a project</text>
+</svg>
