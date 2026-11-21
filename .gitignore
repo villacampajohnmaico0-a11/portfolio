@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temp files
+temp.txt
+orig.BuildTypes.jsx

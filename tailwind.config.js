@@ -21,6 +21,18 @@ export default {
         body: ['Manrope', 'system-ui', 'sans-serif'],
         serif: ['Fraunces', 'Georgia', 'serif'],
       },
+      fontSize: {
+        xs: ['var(--type-caption)', { lineHeight: '1.5' }],
+        hero: ['var(--type-hero)', { lineHeight: '1.02', letterSpacing: '-0.03em' }],
+        section: ['var(--type-section)', { lineHeight: '1.08', letterSpacing: '-0.02em' }],
+        card: ['var(--type-card)', { lineHeight: '1.15' }],
+        'small-heading': ['var(--type-small-heading)', { lineHeight: '1.35' }],
+        'body-lg': ['var(--type-body-lg)', { lineHeight: '1.6' }],
+        body: ['var(--type-body)', { lineHeight: '1.65' }],
+        caption: ['var(--type-caption)', { lineHeight: '1.5' }],
+        eyebrow: ['var(--type-eyebrow)', { lineHeight: '1.5', letterSpacing: '0.1em' }],
+        button: ['var(--type-button)', { lineHeight: '1.25' }],
+      },
       borderRadius: {
         '4xl': '2rem',
       },
@@ -45,4 +57,3 @@ export default {
   },
   plugins: [],
 }
-

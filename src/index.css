@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,6 +17,31 @@
   --lilac: #c9b8ff;
   --butter: #ffe58a;
   --mint: #bdefd8;
+  --z-background: 0;
+  --z-content: 1;
+  --z-hero-copy: 2;
+  --z-hero-card-1: 10;
+  --z-hero-card-2: 20;
+  --z-hero-card-3: 30;
+  --z-hero-card-4: 40;
+  --z-stacked-card: 10;
+  --z-navbar: 100;
+  --z-floating-cta: 110;
+  --z-scroll-progress: 120;
+  --z-backdrop: 1000;
+  --z-modal: 1010;
+  --z-mobile-menu: 1020;
+  --z-toast: 1100;
+  --z-cursor: 9999;
+  --type-hero: clamp(2.5rem, 6vw, 5rem);
+  --type-section: clamp(2rem, 4vw, 3.25rem);
+  --type-card: clamp(1.5rem, 2.4vw, 2.25rem);
+  --type-small-heading: clamp(1.125rem, 1.3vw, 1.25rem);
+  --type-body-lg: clamp(1.125rem, 1.3vw, 1.25rem);
+  --type-body: 1rem;
+  --type-caption: 0.875rem;
+  --type-eyebrow: 0.75rem;
+  --type-button: 0.9375rem;
   font-family: 'Manrope', system-ui, sans-serif;
   color: var(--ink);
   background: var(--paper);
@@ -47,7 +72,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: var(--z-background);
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%23000000' fill-opacity='.04'%3E%3Ccircle cx='6' cy='6' r='1.4'/%3E%3C/g%3E%3C/svg%3E");
   opacity: 0.8;
@@ -59,7 +84,11 @@ section,
 footer,
 header {
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
+}
+
+section[id] {
+  scroll-margin-top: 6rem;
 }
 
 img {
@@ -79,8 +108,97 @@ a {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Sora', system-ui, sans-serif;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.text-hero {
+  font-size: var(--type-hero);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.text-section {
+  font-size: var(--type-section);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.text-card {
+  font-size: var(--type-card);
+  line-height: 1.15;
+}
+
+.text-small-heading {
+  font-size: var(--type-small-heading);
+  line-height: 1.35;
+}
+
+.text-body-lg {
+  font-size: var(--type-body-lg);
+  line-height: 1.6;
+}
+
+.text-body {
+  font-size: var(--type-body);
+  line-height: 1.65;
+}
+
+.text-eyebrow {
+  font-size: var(--type-eyebrow);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+
+.text-button {
+  font-size: var(--type-button);
+  line-height: 1.25;
+}
+
+.text-xs {
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+
+p {
+  max-width: 75ch;
+  text-wrap: pretty;
+}
+
+@layer base {
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
 ::selection {
   background: rgba(47, 75, 255, 0.18);
+}
+
+@media (min-width: 1024px) {
+  .stack-card {
+    height: var(--stack-card-height);
+  }
+}
+
+@media (max-width: 1023px) {
+  .stack-card-container:not(.mobile-stack-enabled) > .stack-card {
+    position: relative !important;
+    top: auto !important;
+    scale: 1 !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1023px) {
+  .mobile-stack-enabled > .stack-card {
+    height: var(--stack-card-height);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

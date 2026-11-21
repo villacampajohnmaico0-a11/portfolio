@@ -3,15 +3,15 @@ export default function SectionHeading({ eyebrow, title, description, align = 'l
   return (
     <div className={`max-w-2xl ${alignClasses}`}>
       {eyebrow && (
-        <p className={`mb-3 text-xs font-semibold uppercase tracking-[0.22em] ${dark ? 'text-white/70' : 'text-accent'}`}>
+        <p className={`mb-3 text-eyebrow font-semibold uppercase ${dark ? 'text-white/80' : 'text-accent'}`}>
           {eyebrow}
         </p>
       )}
-      <h2 className={`font-display text-[clamp(2rem,4.5vw,3.75rem)] leading-[0.95] tracking-[-0.04em] ${dark ? 'text-white' : 'text-ink'}`}>
+      <h2 className={`text-section ${dark ? 'text-white' : 'text-ink'}`}>
         {title}
       </h2>
       {description && (
-        <p className={`mt-5 text-base leading-7 ${dark ? 'text-white/75' : 'text-muted'}`}>{description}</p>
+        <p className={`mt-5 text-body-lg ${dark ? 'text-white/80' : 'text-muted'}`}>{description}</p>
       )}
     </div>
   )

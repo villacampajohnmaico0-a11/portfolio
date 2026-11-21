@@ -14,7 +14,7 @@ export default function Accordion({ items, openIndex, onToggle }) {
           <div key={item.question} className="overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-soft">
             <button
               type="button"
-              className="flex w-full items-center justify-between gap-5 px-5 py-4 text-left md:px-6"
+              className="flex w-full items-center justify-between gap-5 px-5 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset md:px-6"
               aria-expanded={isOpen}
               aria-controls={panelId}
               onClick={() => onToggle(index)}
