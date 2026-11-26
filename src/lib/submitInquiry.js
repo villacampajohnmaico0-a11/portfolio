@@ -5,7 +5,7 @@ export async function submitInquiry(values) {
     console.info('VITE_FORM_ENDPOINT is not configured; using mailto fallback.')
     return {
       mode: 'mailto',
-      to: 'hello@northstarstudio.example',
+      to: 'hello@islakila.dev',
       subject: `Project inquiry from ${values.fullName}`,
       body: [
         `Full name: ${values.fullName}`,

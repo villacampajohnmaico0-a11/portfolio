@@ -380,7 +380,7 @@ export default function WhyMe() {
             </span>
             <span className="h-px flex-1 bg-ink/15" />
             <span className="hidden font-serif text-sm italic text-accent sm:inline">
-              Northstar Studio
+              Rey Islakila
             </span>
           </div>
         </Reveal>

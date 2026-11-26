@@ -1,3 +1,5 @@
+import { projectImages } from "./images";
+
 export const projects = [
   {
     slug: "islakila",
@@ -15,8 +17,8 @@ export const projects = [
     ],
     projectType: "Business Website",
     url: "https://islakila.vercel.app",
-    image:
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80",
+    image: projectImages.islakila.cover,
+    video: projectImages.islakila.video,
     status: "Live project",
     description:
       "A business-facing landing page designed to communicate the brand clearly and keep the next step obvious for potential customers.",
@@ -37,8 +39,8 @@ export const projects = [
     ],
     projectType: "Hotel / Booking Website",
     url: "https://staykila.vercel.app",
-    image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+    image: projectImages.staykila.cover,
+    video: projectImages.staykila.video,
     status: "Live project",
     description:
       "A hospitality-oriented experience focused on property discovery, quick booking intent, and strong visual clarity.",
@@ -59,8 +61,8 @@ export const projects = [
     ],
     projectType: "Custom Management System",
     url: "https://plas-enterprise-ims.vercel.app",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
+    image: projectImages.plasims.cover,
+    video: projectImages.plasims.video,
     status: "Live project",
     description:
       "An internal management dashboard built around visibility, structure, and fast access to core operational information.",
@@ -81,32 +83,54 @@ export const projects = [
     ],
     projectType: "Restaurant Website",
     url: "https://pataopocketpatio.vercel.app",
-    image:
-      "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=80",
+    image: projectImages.pataopatio.cover,
+    video: projectImages.pataopatio.video,
     status: "Live project",
     description:
       "An experience built around a welcoming restaurant feel, menu clarity, and a smooth path to booking or visiting.",
   },
   {
-    slug: "alica-yard",
-    name: "Alica Yard",
-    category: "Property & hospitality",
+    slug: "neleus",
+    name: "Neleus",
+    category: "Web application",
     oneLinePurpose:
-      "A property or hospitality showcase focused on atmosphere, stay details, and guest interest.",
+      "A modern web application built around clean interfaces and smooth user flows.",
     problem:
-      "The presentation needed to communicate the place clearly and help people picture the experience quickly.",
+      "Needed a focused product experience that feels polished from first load through every interaction.",
     highlights: [
-      "Atmosphere-rich visuals",
-      "Property details",
-      "Guest experience framing",
-      "Inviting layout",
+      "Modern web app UI",
+      "Component-driven layout",
+      "Fast, responsive flows",
+      "Clean information hierarchy",
     ],
-    projectType: "Hotel / Booking Website",
-    url: "https://alicayard.vercel.app",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80",
-    status: "Live project",
+    projectType: "Custom Management System",
+    url: "#",
+    image: projectImages.neleus.cover,
+    video: projectImages.neleus.video,
+    status: "In development",
     description:
-      "A lifestyle-oriented property showcase aimed at making the experience easy to imagine and easy to enquire about.",
+      "A web application project showcasing interface design, component structure, and interaction quality.",
+  },
+  {
+    slug: "pickleball",
+    name: "Pickleball",
+    category: "Sports & community",
+    oneLinePurpose:
+      "A community-focused sports website with schedules, courts, and club information.",
+    problem:
+      "Needed an energetic, easy-to-navigate site that makes schedules and club details instantly accessible.",
+    highlights: [
+      "Sporty visual identity",
+      "Schedule and court sections",
+      "Community-first layout",
+      "Mobile-friendly browsing",
+    ],
+    projectType: "Business Website",
+    url: "#",
+    image: projectImages.pickleball.cover,
+    video: projectImages.pickleball.video,
+    status: "In development",
+    description:
+      "A sports community website built around clarity, energy, and quick access to schedules and club information.",
   },
 ];

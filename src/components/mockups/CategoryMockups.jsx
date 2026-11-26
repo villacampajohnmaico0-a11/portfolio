@@ -188,7 +188,7 @@ export function BusinessSite() {
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2f4bff] text-white text-xs font-bold">N</div>
         <div className="text-right">
           <p className="text-xs uppercase tracking-widest text-[#1a33cc]/70">Business site</p>
-          <p className="text-xl font-semibold">Northstar Studio</p>
+          <p className="text-xl font-semibold">Rey Islakila</p>
         </div>
       </div>
       <div className="rounded-[20px] bg-white/60 p-4 border border-[#2f4bff]/30">

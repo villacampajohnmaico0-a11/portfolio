@@ -1,8 +1,8 @@
 // src/components/sections/Process.jsx
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { processSteps } from "../../data/process";
 import Button from "../ui/Button";
+import { projectImages } from "../../data/images";
 
 /* =====================================================================
    VIDEO ASSETS
@@ -16,11 +16,8 @@ const CINEMATIC_SCENES = [
     description:
       "We start by understanding your business, your audience, and what you want to achieve.",
     align: "left",
-    // Cinematic close-up of creative discussions
-    videoUrl:
-      "https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4",
-    posterUrl:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+    videoUrl: projectImages.neleus.video,
+    posterUrl: projectImages.neleus.cover,
   },
   {
     id: "02",
@@ -29,11 +26,8 @@ const CINEMATIC_SCENES = [
     description:
       "We shape your idea into a clear direction, carefully planning the structure and experience.",
     align: "right",
-    // Hands sketching / design layouts
-    videoUrl:
-      "https://videos.pexels.com/video-files/3298668/3298668-hd_1920_1080_24fps.mp4",
-    posterUrl:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop",
+    videoUrl: projectImages.staykila.video,
+    posterUrl: projectImages.staykila.cover,
   },
   {
     id: "03",
@@ -42,11 +36,8 @@ const CINEMATIC_SCENES = [
     description:
       "We bring the approved direction to life, building an experience designed to work beautifully.",
     align: "left",
-    // Cinematic developer / digital creation
-    videoUrl:
-      "https://videos.pexels.com/video-files/3252919/3252919-hd_1920_1080_25fps.mp4",
-    posterUrl:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+    videoUrl: projectImages.plasims.video,
+    posterUrl: projectImages.plasims.cover,
   },
   {
     id: "04",
@@ -55,11 +46,8 @@ const CINEMATIC_SCENES = [
     description:
       "After testing and refinement, your finished website or system is ready for the real world.",
     align: "right",
-    // Modern architecture / achievement
-    videoUrl:
-      "https://videos.pexels.com/video-files/2098989/2098989-hd_1920_1080_30fps.mp4",
-    posterUrl:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    videoUrl: projectImages.pickleball.video,
+    posterUrl: projectImages.pickleball.cover,
   },
 ];
 

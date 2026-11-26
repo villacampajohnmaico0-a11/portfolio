@@ -21,7 +21,7 @@ export default function Footer() {
   const onHome = location.pathname === "/";
 
   // Big outlined word: first word of the brand name
-  const watermark = (site.brandName || "Northstar").split(" ")[0];
+  const watermark = (site.brandName || "Rey Islakila").split(" ")[0];
 
   return (
     <footer className="relative overflow-hidden bg-[#080808] text-white">

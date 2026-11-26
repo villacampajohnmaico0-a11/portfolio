@@ -53,7 +53,7 @@ export function BusinessSiteMockup() {
       <div className="mb-4 flex items-center justify-between rounded-2xl border border-ink/10 bg-paper px-3 py-2">
         <div className="flex items-center gap-2">
           <div className="h-7 w-7 rounded-full bg-accent-soft text-center text-xs font-bold leading-7 text-accent">N</div>
-          <span className="font-semibold text-ink">Northstar</span>
+          <span className="font-semibold text-ink">Islakila</span>
         </div>
         <div className="hidden gap-3 text-xs text-muted sm:flex">
           <span>Services</span>

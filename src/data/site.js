@@ -1,40 +1,43 @@
+// src/data/site.js
+// Personal developer portfolio identity.
+
 export const site = {
-  brandName: "Northstar Studio",
+  brandName: "Rey Islakila",
   businessDescription:
-    "Modern websites, online stores, and custom systems for growing businesses.",
-  email: "hello@northstarstudio.example",
+    "Web developer and custom system developer — I build modern websites, booking platforms, dashboards, and management systems.",
+  email: "hello@islakila.dev",
   linkedIn: "#",
   instagram: "#",
   facebook: "#",
-  phone: "+1 (555) 013-2684",
+  phone: "",
   projectTypeOptions: [
     "Business Website",
     "E-Commerce Website",
     "Hotel / Booking Website",
     "Restaurant Website",
     "Custom Management System",
-    "Property & Listing Site",
+    "Web Application / Dashboard",
     "Other",
   ],
   budgetOptions: [
-    "Under $2,000",
-    "$2,000 - $5,000",
+    "Under $1,000",
+    "$1,000 - $3,000",
+    "$3,000 - $5,000",
     "$5,000 - $10,000",
-    "$10,000 - $25,000",
-    "$25,000+",
+    "$10,000+",
     "Not sure yet",
   ],
   hero: {
-    headline: "Your business deserves more than just a website.",
+    headline: "I build websites and systems that actually work for you.",
     alternateHeadline:
-      "Turn your business into something people can experience online.",
+      "Real software for real businesses — designed, built, and shipped.",
     supportingText:
-      "From professional business websites to online stores and custom management systems, I build digital solutions that help businesses reach more customers, simplify operations, and grow online.",
+      "I'm a web developer and Computer Engineering student, founder of Islakila and StayKila, and a Computer Engineering Intern at Plas Enterprises & Engineering Services. I build modern websites, web applications, booking platforms, dashboards, and custom management systems that help businesses reach more customers and run smoother.",
   },
   nav: [
     { label: "Home", href: "#home" },
     { label: "Solutions", href: "#solutions" },
-    { label: "Our Work", href: "#projects" },
+    { label: "My Work", href: "#projects" },
     { label: "Process", href: "#process" },
     { label: "Pricing", href: "#pricing" },
     { label: "Contact", href: "#contact" },
@@ -42,34 +45,41 @@ export const site = {
   footerLinks: [
     { label: "Home", href: "#home" },
     { label: "Solutions", href: "#solutions" },
-    { label: "Our Work", href: "#projects" },
+    { label: "My Work", href: "#projects" },
     { label: "Pricing", href: "#pricing" },
     { label: "Contact", href: "#contact" },
   ],
   services: [
-    "Business websites",
-    "E-commerce",
-    "Booking systems",
-    "Operations dashboards",
+    "Modern websites",
+    "Web applications",
+    "Booking platforms",
+    "Dashboards",
+    "Custom management systems",
   ],
 };
 
 export const meta = {
-  title: "Northstar Studio | Modern websites for growing businesses",
+  title: "Rey Islakila | Web Developer & Custom System Developer",
   description:
-    "I help businesses grow through modern websites, online stores, booking systems, and custom digital solutions.",
-  canonical: "https://northstarstudio.example",
-  twitterHandle: "@northstarstudio",
+    "I build modern websites, web applications, booking platforms, dashboards, and custom management systems. Founder of Islakila and StayKila.",
+  canonical: "https://islakila.dev",
+  twitterHandle: "@islakila",
 };
 
 export const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Northstar Studio",
+  "@type": "Person",
+  name: "Rey Islakila",
+  jobTitle: "Web Developer & Custom System Developer",
   description:
-    "Custom websites, online stores, booking systems, and digital solutions for growing businesses.",
-  areaServed: "Worldwide",
-  email: "hello@northstarstudio.example",
-  url: "https://northstarstudio.example",
-  sameAs: ["https://www.linkedin.com", "https://www.instagram.com"],
+    "Developer and founder of Islakila and StayKila. I build modern websites, booking platforms, dashboards, and custom management systems.",
+  url: "https://islakila.dev",
+  email: "hello@islakila.dev",
+  knowsAbout: [
+    "Web Development",
+    "E-Commerce",
+    "Booking Platforms",
+    "Dashboards",
+    "Custom Management Systems",
+  ],
 };

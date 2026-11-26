@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { images } from "../../data/images";
+import { projectImages } from "../../data/images";
 import ParallaxLayer from "../ui/ParallaxLayer";
 
 const INTERVAL = 3800;
@@ -15,12 +15,40 @@ const SLOTS = [
 const EXIT = { left: "-56%", width: "52%", height: "100%", opacity: 0 };
 const WAIT = { left: "104%", width: "8%", height: "20%", opacity: 0 };
 
+// The current project photos (unchanged). Only the layout above is the staircase.
+const PHOTOS = [
+  {
+    src: projectImages.staykila.gallery[2],
+    alt: "StayKila booking platform — stay reservation flow",
+  },
+  {
+    src: projectImages.islakila.gallery[0],
+    alt: "Islakila e-commerce storefront homepage",
+  },
+  {
+    src: projectImages.neleus.gallery[2],
+    alt: "Neleus web application interface",
+  },
+  {
+    src: projectImages.pataopatio.gallery[0],
+    alt: "Patao Pocket Patio restaurant website menu",
+  },
+  {
+    src: projectImages.pickleball.gallery[0],
+    alt: "Pickleball club website homepage",
+  },
+  {
+    src: projectImages.plasims.gallery[1],
+    alt: "Plas Enterprise IMS management dashboard",
+  },
+];
+
 export default function HeroShowcase() {
   // Unique photos only. If there are fewer than 5, the list repeats so the
   // loop always has a photo waiting off-screen. Each item gets its own id.
   const photos = useMemo(() => {
     const seen = new Set();
-    const unique = Object.values(images).filter((img) => {
+    const unique = PHOTOS.filter((img) => {
       if (!img?.src || seen.has(img.src)) return false;
       seen.add(img.src);
       return true;
@@ -56,7 +84,7 @@ export default function HeroShowcase() {
       <div
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}>
-        <div className="relative h-[380px] w-full overflow-hidden sm:h-[480px] lg:h-[560px]">
+        <div className="relative h-[300px] w-full overflow-hidden sm:h-[460px] lg:h-[min(560px,calc(100svh_-_11.5rem))] lg:min-h-[400px]">
           {photos.map((img, i) => {
             const slot = slotFor(i);
             const isBig = (i - active + count) % count === 0;
@@ -73,22 +101,23 @@ export default function HeroShowcase() {
                   duration: reduce ? 0.3 : 1,
                   ease: [0.76, 0, 0.24, 1],
                 }}
-                className="absolute bottom-0 block overflow-hidden bg-ink/5 p-0"
+                className="absolute bottom-0 block overflow-hidden bg-white/5 p-0 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.8)] ring-1 ring-white/10"
                 style={{ cursor: isBig ? "default" : "pointer" }}>
                 <img
                   src={img.src}
                   alt={img.alt}
                   draggable={false}
-                  className="h-full w-full object-cover"
-                  style={{ objectPosition: img.focalPoint }}
+                  className="h-full w-full object-cover object-top"
                 />
               </motion.button>
             );
           })}
         </div>
 
-        <div className="mt-4 flex items-center justify-between gap-4">
-          <p className="truncate text-sm text-muted">{photos[active]?.alt}</p>
+        <div className="mt-3 flex items-center justify-between gap-4">
+          <p className="truncate text-sm text-[#EDE7DA]/60">
+            {photos[active]?.alt}
+          </p>
           <div className="flex items-center gap-2" role="tablist">
             {photos.map((img, i) => (
               <button
@@ -99,7 +128,7 @@ export default function HeroShowcase() {
                 aria-label={`Photo ${i + 1}`}
                 onClick={() => setActive(i)}
                 className={`h-[3px] transition-all duration-500 ${
-                  i === active ? "w-10 bg-accent" : "w-4 bg-ink/20"
+                  i === active ? "w-10 bg-[#E2B866]" : "w-4 bg-white/25"
                 }`}
               />
             ))}

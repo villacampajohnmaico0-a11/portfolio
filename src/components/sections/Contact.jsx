@@ -109,7 +109,7 @@ export default function Contact() {
       }
     } catch {
       setSendError(
-        "We could not send the message automatically. Please email hello@northstarstudio.example.",
+        "We could not send the message automatically. Please email hello@islakila.dev.",
       );
       setSent(false);
     } finally {

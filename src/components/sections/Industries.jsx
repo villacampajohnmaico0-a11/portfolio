@@ -8,36 +8,31 @@ import SectionHeading from "../ui/SectionHeading";
 import SolutionPreview from "../ui/SolutionPreview";
 import { useOverlay } from "../../hooks/useOverlay";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
+import { projectImages } from "../../data/images";
 
-const unsplash = (id) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=80`;
-
-// Photos that already load in your project. Add more by pasting a link.
-// healthcare / education / logistics use the gradient cards until you add one.
+// Every tile uses a real screenshot from one of my own projects.
+// Healthcare / education / logistics keep the gradient cards.
 const INDUSTRY_MEDIA = {
   hospitality: {
-    src: unsplash("photo-1505693416388-ac5ce068fe85"),
-    alt: "Bright hotel bedroom with warm natural light",
+    src: projectImages.staykila.cover,
+    alt: "StayKila booking platform — property discovery for hospitality",
   },
   "food-and-beverage": {
-    src: unsplash("photo-1559339352-11d035aa65de"),
-    alt: "Restaurant table with plated dishes",
+    src: projectImages.pataopatio.cover,
+    alt: "Patao Pocket Patio restaurant website — menu and dining sections",
   },
   property: {
-    src: unsplash("photo-1494526585095-c41746248156"),
-    alt: "Modern home exterior and landscaped property",
+    src: projectImages.staykila.gallery[1] ?? projectImages.staykila.cover,
+    alt: "StayKila booking platform — property listing screens",
   },
   retail: {
-    src: unsplash("photo-1441986300917-64674bd600d8"),
-    alt: "Boutique retail interior with products on display",
+    src: projectImages.islakila.cover,
+    alt: "Islakila website — product and retail presentation",
   },
   "professional-services": {
-    src: unsplash("photo-1497366754035-f200968a6e72"),
-    alt: "Creative office workspace",
+    src: projectImages.plasims.cover,
+    alt: "Plas Enterprise IMS — operations dashboard interface",
   },
-  // healthcare: { src: "PASTE_LINK_HERE", alt: "Modern healthcare interior" },
-  // education: { src: "PASTE_LINK_HERE", alt: "University campus" },
-  // logistics: { src: "PASTE_LINK_HERE", alt: "Warehouse and distribution" },
 };
 
 // Gradient art used when a card has no photo (or its photo fails).

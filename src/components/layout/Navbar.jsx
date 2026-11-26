@@ -33,10 +33,10 @@ export default function Navbar() {
       <div
         className={`mx-auto max-w-site px-4 transition-all duration-300 sm:px-6 lg:px-8 ${scrolled ? "pt-4" : "pt-5"}`}>
         <nav
-          className={`flex items-center justify-between rounded-full border px-3 py-2.5 transition-all duration-300 ${scrolled ? "border-ink/10 bg-white/75 shadow-soft backdrop-blur-md" : "border-white/30 bg-transparent"}`}>
+          className={`flex items-center justify-between rounded-full border px-3 py-2.5 transition-all duration-300 ${scrolled ? "border-ink/10 bg-white/75 shadow-soft backdrop-blur-md" : "border-white/25 bg-black/35 text-white backdrop-blur-md"}`}>
           <Link
             to={location.pathname === "/" ? "#home" : "/#home"}
-            className="flex items-center gap-3 text-ink">
+            className={`flex items-center gap-3 transition-colors ${scrolled ? "text-ink" : "text-white"}`}>
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
               N
             </div>
@@ -45,12 +45,12 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="hidden items-center gap-1 rounded-full border border-ink/10 bg-white/55 p-1 lg:flex">
+          <div className="hidden items-center gap-1 rounded-full border border-white/20 bg-white/10 p-1 lg:flex">
             {site.nav.map((item) => (
               <Link
                 key={item.href}
                 to={location.pathname === "/" ? item.href : `/${item.href}`}
-                className={`rounded-full px-3.5 py-2 text-sm font-medium transition ${activeSection === item.href.replace("#", "") ? "bg-ink text-white shadow-sm" : "text-ink/70 hover:text-ink"}`}>
+                className={`rounded-full px-3.5 py-2 text-sm font-medium transition ${activeSection === item.href.replace("#", "") ? "bg-white text-ink shadow-sm" : "text-white/75 hover:text-white"}`}>
                 {item.label}
               </Link>
             ))}
@@ -73,7 +73,7 @@ export default function Navbar() {
                 content: <MobileMenu activeSection={activeSection} />,
               })
             }
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/10 bg-white/80 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-black/40 text-white backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 lg:hidden"
             aria-label={menuOpen ? "Menu open" : "Open menu"}
             aria-expanded={menuOpen}>
             <Menu className="h-5 w-5" />

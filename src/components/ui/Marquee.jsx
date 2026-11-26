@@ -79,9 +79,11 @@ const SERVICES = [
   },
 ].map((s, i) => ({ ...s, index: String(i + 1).padStart(2, "0") }));
 
+// Type size.
+// PHONE (below sm): more air, smaller cap so the stack reads as a list, not a wall.
+// sm AND UP: original formula, unchanged.
 const TYPE =
-  "block origin-left text-[length:clamp(2.25rem,min(7vw,calc((100vh_-_11rem)/7.2)),5.6rem)] leading-[0.95] tracking-[-0.03em] font-bold uppercase";
-
+  "block origin-left text-[length:clamp(1.35rem,min(7.2vw,calc((100svh_-_30rem)/9.2)),2.4rem)] sm:text-[length:clamp(2.25rem,min(7vw,calc((100vh_-_11rem)/7.2)),5.6rem)] leading-[0.95] tracking-[-0.03em] font-bold uppercase";
 const FILLER_STROKE = "rgba(20, 21, 26, 0.16)";
 
 function FillerWord({ label }) {
@@ -119,7 +121,8 @@ function ServiceRow({
         active ? "z-20" : "z-0"
       }`}
       style={{ "--x": service.offset }}>
-      <div className="relative flex items-center gap-4 translate-x-[calc(var(--x)*0.35)] sm:translate-x-[var(--x)]">
+      {/* Phone: smaller sideways shift (0.2) so a bigger word never leaves the screen */}
+      <div className="relative flex items-center gap-4 translate-x-[calc(var(--x)*0.2)] sm:translate-x-[var(--x)]">
         {/* LEFT FILLERS */}
         <div
           aria-hidden="true"
@@ -129,7 +132,9 @@ function ServiceRow({
           ))}
         </div>
 
-        {/* MAIN LABEL: the only one that highlights */}
+        {/* MAIN LABEL: the only one that highlights.
+            Phone: may wrap onto 2 lines inside 88vw so the whole word stays readable.
+            sm and up: one line, as before. */}
         <motion.span
           initial={false}
           animate={{
@@ -138,7 +143,7 @@ function ServiceRow({
             color: active ? ACCENT : FILL_OFF,
           }}
           transition={transition}
-          className={`${TYPE} will-change-transform`}
+          className={`${TYPE} max-w-[88vw] shrink-0 text-balance whitespace-normal will-change-transform sm:max-w-none sm:whitespace-nowrap`}
           style={{
             WebkitTextStroke: "1px",
             WebkitTextStrokeColor: active ? ACCENT : STROKE_OFF,
@@ -269,8 +274,17 @@ export default function Marquee({ items, className = "" }) {
         </div>
 
         {/* LAYER 1: word stack */}
-        <div className="relative flex w-full max-w-[1200px] items-center justify-center px-4 sm:px-6">
-          <ol className="relative flex w-full flex-col items-stretch justify-center">
+        <div className="relative flex h-full w-full max-w-[1200px] flex-col justify-center px-4 sm:px-6">
+          <ol className="relative flex h-full w-full flex-col justify-between py-12 sm:justify-center sm:py-0">
+            {/* Ghost filler row at the top for phone */}
+            <li className="pointer-events-none flex w-full items-center justify-center gap-4 whitespace-nowrap py-0.5 opacity-40 sm:hidden">
+              <div className="relative flex items-center gap-4">
+                <FillerWord label="WEB APPS" />
+                <FillerWord label="MOBILE" />
+                <FillerWord label="SAAS" />
+              </div>
+            </li>
+
             {services.map((service, i) => {
               const pick = (steps) =>
                 steps
@@ -293,11 +307,21 @@ export default function Marquee({ items, className = "" }) {
                 />
               );
             })}
+
+            {/* Ghost filler row at the bottom for phone */}
+            <li className="pointer-events-none flex w-full items-center justify-center gap-4 whitespace-nowrap py-0.5 opacity-40 sm:hidden">
+              <div className="relative flex items-center gap-4">
+                <FillerWord label="DESIGN" />
+                <FillerWord label="BRANDING" />
+                <FillerWord label="CODE" />
+              </div>
+            </li>
           </ol>
         </div>
 
-        {/* LAYER 2: pinned card (no borders) */}
-        <div className="pointer-events-none absolute left-1/2 top-[calc(50%+3rem)] z-10 w-[220px] max-w-[48vh] -translate-x-1/2 -translate-y-1/2 sm:top-[calc(50%+3.5rem)] sm:w-[340px] md:w-[380px] lg:w-[420px]">
+        {/* LAYER 2: pinned card (no borders). Slightly narrower on phones so it
+            covers less of the bigger words. */}
+        <div className="pointer-events-none absolute left-1/2 top-[calc(50%+3rem)] z-10 w-[190px] max-w-[44vh] -translate-x-1/2 -translate-y-1/2 sm:top-[calc(50%+3.5rem)] sm:w-[340px] sm:max-w-[48vh] md:w-[380px] lg:w-[420px]">
           <motion.div
             className="will-change-transform"
             animate={{ rotate: reducedMotion ? 0 : activeService.tilt }}

@@ -1,4 +1,3 @@
-// src/components/ui/StackCard.jsx
 import {
   motion,
   useMotionValueEvent,
