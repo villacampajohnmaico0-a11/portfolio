@@ -67,7 +67,7 @@ import plasIms19 from "../assets/PLAS-IMS/pl19.png";
 import staykilaVideo from "../assets/STAYKILA/s1.mp4";
 import staykila2 from "../assets/STAYKILA/s2.png";
 import staykila3 from "../assets/STAYKILA/s3.png";
-import staykila4 from "../assets/STAYKILA/s4.png";
+import staykila4 from "../assets/STAYKILA/s5.png";
 import staykila5 from "../assets/STAYKILA/s5.png";
 import staykila6 from "../assets/STAYKILA/s6.png";
 import staykila7 from "../assets/STAYKILA/s7.png";

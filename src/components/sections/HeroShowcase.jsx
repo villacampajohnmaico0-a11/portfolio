@@ -1,6 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { projectImages } from "../../data/images";
+import hero1 from "../../assets/hero1.png";
+import hero2 from "../../assets/hero2.png";
+import hero3 from "../../assets/hero3.png";
+import hero4 from "../../assets/hero4.png";
+import hero5 from "../../assets/hero5.png";
+import hero6 from "../../assets/hero6.png";
 import ParallaxLayer from "../ui/ParallaxLayer";
 
 const INTERVAL = 3800;
@@ -18,28 +23,28 @@ const WAIT = { left: "104%", width: "8%", height: "20%", opacity: 0 };
 // The current project photos (unchanged). Only the layout above is the staircase.
 const PHOTOS = [
   {
-    src: projectImages.staykila.gallery[2],
-    alt: "StayKila booking platform — stay reservation flow",
+    src: hero1,
+    alt: "Hero showcase image 1",
   },
   {
-    src: projectImages.islakila.gallery[0],
-    alt: "Islakila e-commerce storefront homepage",
+    src: hero2,
+    alt: "Hero showcase image 2",
   },
   {
-    src: projectImages.neleus.gallery[2],
-    alt: "Neleus web application interface",
+    src: hero3,
+    alt: "Hero showcase image 3",
   },
   {
-    src: projectImages.pataopatio.gallery[0],
-    alt: "Patao Pocket Patio restaurant website menu",
+    src: hero4,
+    alt: "Hero showcase image 4",
   },
   {
-    src: projectImages.pickleball.gallery[0],
-    alt: "Pickleball club website homepage",
+    src: hero5,
+    alt: "Hero showcase image 5",
   },
   {
-    src: projectImages.plasims.gallery[1],
-    alt: "Plas Enterprise IMS management dashboard",
+    src: hero6,
+    alt: "Hero showcase image 6",
   },
 ];
 
