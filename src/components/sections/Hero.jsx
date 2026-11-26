@@ -30,13 +30,13 @@ export default function Hero() {
       <section
         id="home"
         className="relative flex min-h-[100svh] items-center overflow-x-clip bg-[#050403] pb-12 pt-32 sm:pb-16 md:pb-20 lg:pt-28">
-        {/* Background photo (src/assets/herobackground.jpg): fills the hero edge to edge */}
+        {/* Background photo (src/assets/herobackground.jpg): whole image always visible, never cropped */}
         <img
           src={heroBackground}
           alt=""
           aria-hidden="true"
           draggable={false}
-          className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-cover object-center"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full select-none object-contain object-center"
         />
         {/* Shade for phones/tablets: darker behind the text at the top, lighter lower down */}
         <div
